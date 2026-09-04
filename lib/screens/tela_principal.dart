@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'cadastros/cadastro_equipamento.dart';
+import 'cadastros/cadastro_indicador.dart';
+import 'cadastros/cadastro_medicao.dart';
+import 'cadastros/cadastro_safra.dart';
+import 'cadastros/cadastro_tipo_informacao.dart';
+import 'cadastros/cadastro_unidade.dart';
+import 'cadastros/cadastro_unidade_de_medida.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -38,33 +45,76 @@ Widget montarMenu() {
         },
       ),
       if (cadastroAberto) ...[
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Unidade'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Unidade'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroUnidadePage(),
+            ));
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Setor'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Equipamento'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroEquipamentoPage(),
+            ));
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Equipamento'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Indicador'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context) => const CadastroIndicadorPage(),
+              ),
+            );
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Indicador'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Tipo de Medição'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroTipoInformacaoPage(),
+            ));
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Funcionário'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Parâmetro'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroUnidadeDeMedidaPage(),
+            ));
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Tipo de Medição'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Safra'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroSafraPage(),
+            ));
+          },
         ),
-        const ListTile(
-          leading: Icon(Icons.chevron_right),
-          title: Text('Parâmetro'),
+        ListTile(
+          leading: const Icon(Icons.chevron_right),
+          title: const Text('Medição'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const CadastroMedicaoPage(),
+            ));
+          },
         ),
       ],
     ],
